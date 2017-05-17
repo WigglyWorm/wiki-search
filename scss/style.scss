@@ -1,0 +1,224 @@
+@import "compass/css3";
+
+@import url('http://fonts.googleapis.com/css?family=Oxygen:300');
+
+$background: #afeeee;
+
+  ;
+
+body {
+  background: $background;
+  color: pink;
+  font-family: 'Oxygen';
+  font-weight: 300;
+  @include transition(all, 1s);
+  
+ a:-webkit-any-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  &.hue {
+    background: adjust-hue($background, 100deg);
+  }
+}
+header {
+  position: relative;
+}
+ .logo {
+   // display: block;
+   //  margin-left: auto;
+   //  margin-right: auto; 
+   padding-left: 1em;
+   width: 10%;
+  position: relative;
+}
+.sr-only {
+  text-indent: -9999em;
+  float: left;
+}
+
+form {
+  @include translateY(0%, -50%);
+  position: fixed;
+  width: 100vw;
+  top: 40vh;
+  font-size: 2rem;
+  text-align: center;
+  overflow: hidden;
+  @include rotate(-145deg);
+  @include transition(all, .5s);
+  
+  &:hover {
+    @include rotate(-130deg);
+    @include transition(all, .2s);
+  }
+  
+  &.rotate {
+    @include rotate(0);
+  }
+  
+  input, 
+  button {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    vertical-align: middle;
+  }
+  
+  input[type="search"] {
+    height: 20px;
+    width: 25px;
+    @include border-radius(0 40px 40px 0);
+    @include transition(all, .4s);
+    color: #fff;
+    @include transition-delay(0);
+    @include input-placeholder {
+      color: #fff;
+    }
+    
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      text-align: center;
+      cursor: pointer;
+      
+      &:before {
+        display: none;
+        color: invert($background);
+        content: '\00D7';
+        line-height: 1;
+        margin-right: 2.75em;
+        @include transition(display, .5s);
+      }
+    }
+    
+    &.grow {
+      color: lighten(#000, 30%); 
+      height: 90px;
+      width: 435px;
+      padding-left: 1em;
+      @include transition-delay(.2s);
+      @include border-radius(50px);
+      @include input-placeholder {
+        color: lightgray;
+      }
+      
+      &::-webkit-search-cancel-button {
+        
+        &:before {
+          display: block;
+        }
+      }
+    }
+  }
+  
+  button {
+    position: relative;
+    border: 10px solid white;
+    background: none;
+    color: white;
+    @include border-radius(50%);
+    height: 100px;
+    width: 100px;
+    margin-left: -5px;
+    @include transition(all, .2s);
+    line-height: 0;
+    
+    &:hover {
+      background: rgba(#fff, .2);
+    }
+    span {
+      position: relative;
+      left: 12px;
+      top: -5px;
+      background: #fff;
+      content: '';
+      height: 2px;
+      width: 35px;
+      @include transition(all, .2s);
+      @include rotate(-85deg);
+      
+      &:before {
+        position: absolute;
+        left: -4px;
+        top: 12px;
+        background: #fff;
+        content: '';
+        height: 2px;
+        width: 25px;
+        @include transition(all, .2s);
+        @include transition-delay(.4s);
+      }
+      
+      &:after {
+        position: absolute;
+        left: -4px;
+        top: -12px;
+        background: #fff;
+        content: '';
+        height: 2px;
+        width: 25px;
+        @include transition(all, .2s);
+        @include transition-delay(.2s);
+      }
+    }
+    
+    &.submit {
+      margin-left: -104px;
+      background: $background;
+
+      &:hover {
+        background: adjust-hue($background, 30deg);
+       span {
+         left: 20px;
+       }
+      }
+      span {
+        position: relative;
+        left: 12px;
+        top: 0;
+        background: #fff;
+        content: '';
+        height: 2px;
+        width: 35px;
+        @include rotate(0deg);
+
+        &:before {
+          position: absolute;
+          left: 15px;
+          top: 8px;
+          background: #fff;
+          content: '';
+          height: 2px;
+          width: 25px;
+          @include rotate(-45deg);
+          @include transition-delay(.5s);
+        }
+        
+        &:after {
+          position: absolute;
+          left: 15px;
+          top: -8px;
+          background: #fff;
+          content: '';
+          height: 2px;
+          width: 25px;
+          @include rotate(45deg);
+          @include transition-delay(.75s);
+        }
+      }
+    }
+  }
+}
+#output {
+  margin-top: 22%; 
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.output-list {
+   background: #eeafaf;
+  padding: 20px;
+  border-radius:25px;
+  margin: 2%;
+  
+}

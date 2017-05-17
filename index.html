@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Wiki Search</title>
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <header>
+  <a href ="https://en.wikipedia.org/wiki/Special:Random" target="blank" title="Random Article"><img class="logo" src = "https://image.flaticon.com/icons/png/512/33/33949.png"target = "blank"></a>
+  </header>
+
+  <form action = "#">
+    <label class ="sr-only" for = "q"> Search</label>
+    <input id ="searchTerm" type = "search" placeholder = 'Wiki Search' name = "q" id = 'q'>
+
+       <button id ="search" type = "submit"><span class="sr-only">Search</span>
+      </button>
+</form>
+
+<div id="output"></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
